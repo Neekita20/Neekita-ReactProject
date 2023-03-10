@@ -1,0 +1,33 @@
+$primaryfamily:lato;
+$primarycolor:rgb(104, 103, 103);
+body{
+    width:100%;
+}
+.container{
+  
+    .card{
+        background-color: white;
+        //box-shadow: rgb(255, 92, 92);
+        border-radius: 1px;
+        height: 450px;
+        border: 1px solid rgb(182, 182, 255);
+        .card-body{
+           
+            .card-title{
+                
+                    color:rgb(87, 146, 255);
+       
+                    }
+            .mb-3{
+                .form-label{
+                    font-size: 13px;
+                    color:$primarycolor;
+                    font-family: $primaryfamily;
+
+                }
+           
+            }
+                        
+                }
+        }
+        }
