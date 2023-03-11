@@ -1,21 +1,26 @@
 import React, { useContext } from 'react'
 import { PRODUCTS } from '../../DummyData/product'
 import { ShopContext } from '../../context/shop-context'
-import { CartItem } from './cartitem'
 import './cart.scss'
-import {Link} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
+import { CheckOutItem } from './checkoutitem';
 
-export const Cart = () => {
+export const Checkout = () => {
   const {cartItems,getTotalCartAmount}=useContext(ShopContext);
   const totalAmount=getTotalCartAmount();
+  const navigate = useNavigate();
+  function sucess(){
+    alert("Success");
+    navigate("/");
+  }
   return (
     <div>
-      <h4 style={{color:"#575656", padding:"20px",fontFamily:"lato" }}> Your Cart Items</h4>
+      <h4 style={{color:"#575656", padding:"20px",fontFamily:"lato" }}>Checkout</h4>
       <div className='d-flex justify-content-center'>
-      <div class="col" style={{marginLeft:"20%",marginRight:"20%"}}>
-        {PRODUCTS.map((product)=>{
+      <div class="col" style={{marginLeft:"30%"}}>
+      {PRODUCTS.map((product)=>{
           if(cartItems[product.id]!==0){
-              return <CartItem data={product}/>;
+              return <CheckOutItem data={product}/>;
           }
         })}
         </div>
@@ -28,7 +33,7 @@ export const Cart = () => {
 </div>
 
 <br/>
-<Link class="btn btn-primary" to="/signup">Checkout</Link>
+<button class="btn btn-primary" onClick={()=>sucess()}>Proceed</button>
     </div>
     
   )

@@ -7,6 +7,7 @@ import { Cart } from './pages/cart/cart';
 import { Product } from './pages/product/product';
 import { ShopContextProvider } from './context/shop-context';
 import { Signup } from './pages/signup/signup';
+import { Checkout } from './pages/cart/checkout';
 function App() {
   return (
     <div className="App">
@@ -19,7 +20,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/product" element={<Product />} />
             <Route path="/signup" element={<Signup />} />
-
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           <Footer />
         </Router>
